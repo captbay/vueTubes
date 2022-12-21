@@ -5,36 +5,36 @@ import { createRouter, createWebHistory } from "vue-router";
 //define a routes
 const routes = [
   {
-    path: "/masuk",
-    name: "masuk",
-    component: () => import("@/views/masukPage.vue"),
-    props: true,
-    // meta: {
-    //   requiresVisitor: true,
-    //   layout: "landing",
-    // },
-  },
-  {
-    path: "/daftar",
-    name: "daftar",
-    component: () => import("@/views/daftarPage.vue"),
-    props: true,
-    // meta: {
-    //   requiresVisitor: true,
-    //   layout: "landing",
-    // },
-  },
-  {
     path: "/",
     name: "index",
     component: () => import("@/components/IndexLayout.vue"),
-    props: true,
+    // props: true,
     // meta: {
     //   requiresAuth: true,
     //   layout: "default",
     //   reload: true,
     // },
     children: [
+      {
+        path: "/masuk",
+        name: "masuk",
+        component: () => import("@/views/masukPage.vue"),
+        // props: true,
+        // meta: {
+        //   requiresVisitor: true,
+        //   layout: "landing",
+        // },
+      },
+      {
+        path: "/daftar",
+        name: "daftar",
+        component: () => import("@/views/daftarPage.vue"),
+        // props: true,
+        // meta: {
+        //   requiresVisitor: true,
+        //   layout: "landing",
+        // },
+      },
       {
         path: "/",
         name: "beranda",
